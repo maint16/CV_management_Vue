@@ -1,29 +1,58 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <NavigationBar/>
+
+    <!-- Page Content -->
+    <div class="container">
+      <!-- Skill -->
+      <div class="row">
+        <div class="col-md-7" aria-rowspan="2">
+          <div class="container">
+              <Skill/>
+            <hr>
+            <div class="row ">
+              <h3 >
+                Project
+              </h3>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="container">
+            <div class="row">
+              <img class="img-fluid rounded mb-3 mb-md-0" src="Photo.jpg" alt="">
+            </div>
+            <hr>
+            <div class="row">
+              <!-- user description -->
+              <h3 >
+                user description
+              </h3>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
   </div>
+
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+<script>
+    import HelloWorld from './components/HelloWorld.vue';
+    import NavigationBar from './components/navigation-bar.vue';
+   import  Skill from './components/Skill.vue';
+    export default {
+      components:{
+          HelloWorld,
+          NavigationBar,
+          Skill
+      }
+    }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

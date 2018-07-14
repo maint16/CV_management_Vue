@@ -1,13 +1,14 @@
 <template>
  <div>
+
      <div class="row">
          <!-- user description -->
          <h3 class="my-4">
              user description
          </h3>
-          <p v-for="des in descriptions">
+          <span v-for="des in descriptions">
               {{des.description}}
-          </p>
+          </span>
 
      </div>
  </div>

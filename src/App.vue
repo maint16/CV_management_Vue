@@ -1,56 +1,64 @@
 <template>
-  <div id="app">
-    <NavigationBar/>
+    <div id="app">
+        <NavigationBar/>
 
-    <!-- Page Content -->
-    <div class="container">
-      <!-- Skill -->
-      <div class="row">
-        <div class="col-md-7" aria-rowspan="2">
-          <div class="container">
-              <Skill/>
-            <hr>
-            <div class="row ">
-              <h3 >
-                Project
-              </h3>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div class="container">
+        <!-- Page Content -->
+        <div class="container">
+            <!-- Skill -->
             <div class="row">
-              <img class="img-fluid rounded mb-3 mb-md-0" src="Photo.jpg" alt="">
-            </div>
-            <hr>
-            <div class="row">
-              <!-- user description -->
-              <h3 >
-                user description
-              </h3>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <Skill/>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <project/>
+                        </div>
+                    </div>
+                    <hr>
 
-            </div>
-          </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <my-profile/>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <user-description/>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
 
         </div>
-      </div>
     </div>
-  </div>
 
 </template>
 
 <script>
     import HelloWorld from './components/HelloWorld.vue';
     import NavigationBar from './components/navigation-bar.vue';
-   import  Skill from './components/Skill.vue';
+    import Skill from './components/skill.vue';
+    import Project from './components/project.vue';
+    import UserDescription from './components/user-description.vue';
+    import MyProfile from "./components/my-profile";
+
     export default {
-      components:{
-          HelloWorld,
-          NavigationBar,
-          Skill
-      }
+        components: {
+            MyProfile,
+            HelloWorld,
+            NavigationBar,
+            Skill,
+            Project,
+            UserDescription
+        }
     }
 </script>
 

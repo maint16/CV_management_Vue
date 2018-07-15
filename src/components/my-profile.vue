@@ -3,6 +3,13 @@
         <!-- photo-->
         <div class="row">
             <img class="img-fluid rounded mb-3 mb-md-0" src="../Image/Photo.jpg" alt="">
+            <br> <br>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Avatar</div>
+            <div class="col-md-10">
+                <input type="file" >
+            </div>
         </div>
         <!--end photo-->
         <hr>

@@ -4,7 +4,18 @@
             <span class="glyphicon glyphicon-asterisk"></span> user description
         </h3>
         <ul class="list-group">
-            <li class="list-group-item" v-for="des in descriptions">{{des.description}}</li>
+            <li class="list-group-item" v-for="des in descriptions">
+
+                <span> {{des.description}}</span>
+                <span class="badge">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </span>
+
+                <span class="badge">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </span>
+
+            </li>
         </ul>
         <modal v-model="open1"
                title="Create"
@@ -44,7 +55,6 @@
         },
         methods: {
             addUserDescription: function (obj) {
-                alert(obj.description +obj.id);
                 this.open1 = false;
             }
         }

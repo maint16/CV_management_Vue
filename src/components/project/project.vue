@@ -3,38 +3,59 @@
         <h3>
             <span class="glyphicon glyphicon-asterisk"></span> Project
         </h3>
-        <div class="row " v-for="project in projects">
-            <!--project info-->
-            <div class="col-md-12">
-                <div class="row">
-                    <h4>{{project.name}}</h4>
+        <div class="panel-group">
+            <div class="panel panel-info" v-for="(project,index) in projects">
+                <div class="panel-heading" role="button" @click="toggleAccordion(index)">
+                    <h4 class="panel-title">{{project.name}}</h4>
                 </div>
-                <div class="row">
-                    Description : {{project.description}}
-                </div>
-                <div class="row">
-                    Skills : <span v-if="project.projectSkills!=null" v-for="proSkill in project.projectSkills"
-                                   class="project-skill">
-                    <span v-if=" proSkill.skill != null">{{ proSkill.skill.name}}</span>
-                </span>
-                </div>
-                <div class="row">
-                    <div class="col-md-2"> Responsibilities:</div>
-                    <div class="col-md-10">
-                        <div class="row" v-if="project.projectRespons != null"
-                             v-for="proResp in project.projectRespons">
-                            <span v-if="proResp.responsibility != null">
-                                {{proResp.responsibility.name}}
-                            </span>
-                        </div>
-                    </div>
+                <collapse v-model="showAccordion[index]">
 
-                </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Description : {{project.description}}
+                        </li>
+                        <li class="list-group-item">
+                            Skills :
+                            <ul class="list-group" v-if="project.projectSkills!=null">
+                                <li class="list-group-item" v-for="proSkill in project.projectSkills">
+
+                                    <span v-if=" proSkill.skill != null">{{ proSkill.skill.name}}</span>
+                                    <span class="badge">
+                                      <span class="glyphicon glyphicon-remove"></span>
+                                 </span>
+
+                                    <span class="badge">
+                                      <span class="glyphicon glyphicon-pencil"></span>
+                                </span>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            Responsibilities :
+                            <ul class="list-group" v-if="project.projectRespons != null">
+                                <li class="list-group-item" v-for="proResp in project.projectRespons">
+
+                                    <span v-if="proResp.responsibility != null">
+                                        {{proResp.responsibility.name}}
+                                    </span>
+                                    <span class="badge">
+                                      <span class="glyphicon glyphicon-remove"></span>
+                                    </span>
+
+                                    <span class="badge">
+                                      <span class="glyphicon glyphicon-pencil"></span>
+                                    </span>
+
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </collapse>
             </div>
-
         </div>
-
-
+       
     </div>
 
 </template>
@@ -44,6 +65,7 @@
         name: "project",
         data() {
             return {
+                showAccordion: [true, false, false],
                 "projects": [
                     {
                         "description": "enim est tempor cillum",
@@ -197,6 +219,15 @@
                         ],
                     }
                 ]
+            }
+        },
+        methods: {
+            toggleAccordion(index) {
+                if (this.showAccordion[index]) {
+                    this.$set(this.showAccordion, index, false)
+                } else {
+                    this.showAccordion = this.showAccordion.map((v, i) => i === index)
+                }
             }
         }
     }

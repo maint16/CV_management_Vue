@@ -1,6 +1,8 @@
 <template>
     <div>
-        <h3>Skill</h3>
+        <h3>
+            <span class="glyphicon glyphicon-asterisk"></span> Skill
+        </h3>
         <!-- Skill -->
         <div class="row " v-for="item in skillCategorys">
             <h4>{{item.name}}</h4>

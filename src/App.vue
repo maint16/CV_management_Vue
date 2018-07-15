@@ -45,9 +45,9 @@
 <script>
     import HelloWorld from './components/HelloWorld.vue';
     import NavigationBar from './components/navigation-bar.vue';
-    import Skill from './components/skill.vue';
-    import Project from './components/project.vue';
-    import UserDescription from './components/user-description.vue';
+    import Skill from './components/skill/skill.vue';
+    import Project from './components/project/project.vue';
+    import UserDescription from './components/user-description/user-description.vue';
     import MyProfile from "./components/my-profile";
 
     export default {

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h3 class="my-4">
-            Project
+        <h3>
+            <span class="glyphicon glyphicon-asterisk"></span> Project
         </h3>
         <div class="row " v-for="project in projects">
             <!--project info-->
